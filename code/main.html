@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Minesweeper Cricket</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div id="everything">
+      <span id="open"
+        ><img src="./images/info.png" width="30px" height="30px" id="info-button"
+      /></span>
+
+      <div id="info-window" class="info-window">
+        <h3>Game Information</h3>
+        <hr />
+        <p style="margin-top: 20px">
+          Welcome to this crazy combination of Cricket and Minesweeper, fielders
+          are spread randomly on the field and you need to pick blocks such that
+          they don't contain fielders.
+        </p>
+        <p>
+          Different blocks have different scores, clicking on one may give you a
+          boundary score or just a single. Clicking on blocks where fielders are
+          present will make the game stop.
+        </p>
+        <p>
+          There are two game options present, you can either play alone or play
+          with a friend in the Double Player mode. The double player mode
+          introduces a turn based system where each player will pick a block
+          each turn. The one with the highest score when both the players get
+          out will win the game!
+        </p>
+        <p>
+          You can also choose the grid size of the game, there are 5 options
+          available, from 6x6 to 10x10.
+        </p>
+        <p>
+          There are some hidden shields in the field, which will protect you if
+          find a fielder in the next 3 turns, good luck on locating them!
+        </p>
+        <span id="cl"><button id="close-button">X</button></span>
+      </div>
+
+      <div id="overlay" class="overlay"></div>
+      <h1>Minesweeper Cricket</h1>
+      <div id="start-window">
+        <button class="startbtn" id="single" onclick="single()">
+          Single Player
+        </button>
+        <button class="startbtn" id="double" onclick="double()">
+          Double Player
+        </button>
+      </div>
+      <img src="./images/back.png" id="back-button" style="display: none" />
+      <div id="name-prompt" style="display: none">
+        <form id="player-names-form">
+          <label for="player1-name">Player 1 Name:</label>
+          <input type="text" id="player1-name" required />
+          <br />
+          <label for="player2-name">Player 2 Name:</label>
+          <input type="text" id="player2-name" required />
+          <br />
+          <button type="submit" id="start">Start Game</button>
+        </form>
+      </div>
+      <div id="grid-size-form" style="display: none">
+        <p style="margin: 10px">Select Grid Size:</p>
+        <div class="grid-size-option" onclick="showGameGrid(6)">6x6</div>
+        <div class="grid-size-option" onclick="showGameGrid(7)">7x7</div>
+        <div class="grid-size-option" onclick="showGameGrid(8)">8x8</div>
+        <div class="grid-size-option" onclick="showGameGrid(9)">9x9</div>
+        <div class="grid-size-option" onclick="showGameGrid(10)">10x10</div>
+      </div>
+      <div id="game-container" style="display: none">
+        <div id="game-grid"></div>
+        <div id="score">Score: <span id="run-score">0</span></div>
+        <div id="double-score">
+          <span id="player1-score" style="display: inline-block">0</span><br />
+          <span id="player2-score" style="display: inline-block">0</span>
+        </div>
+      </div>
+      <button id="reset-button" style="display: none">Reset Game</button>
+      <script src="script.js"></script>
+    </div>
+  </body>
+</html>
